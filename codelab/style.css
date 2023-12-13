@@ -1,0 +1,60 @@
+body{
+    background-color:cornflowerblue;
+}
+.container{
+    width: 90vw;
+    max-width: 600px;
+    padding: 2em 1.5em;
+    background-color:#ffffff ;
+    margin: 1em auto;
+    border-radius: 0.5em;
+}
+.input-section{
+    margin: 0.5em;
+}
+label, .error-message{
+    display: block;
+    font-size: medium;
+}
+label{
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    cursor: pointer;
+}
+.error-message{
+    margin-top: 0.2em;
+}
+input, button{
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.3em;
+}
+input{
+    padding: 1em 0.5em;
+    border: 1.5px solid #d0d0d0;
+}
+button{
+    font-size: medium;
+    background-color: cornflowerblue;
+    border: none;
+    color: #ffffff;
+    padding: 0.8em 0;
+    margin-top: 2em;
+    margin: auto;
+}
+.required-color{
+    color: red;
+}
+.error{
+    border-color: red;
+}
+.hide{
+    display: none;
+}
+@media only screen and(max-width:450px){
+    .container{
+        font-size: medium;
+    }
+}

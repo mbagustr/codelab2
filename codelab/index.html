@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penjumlahan Bilangan</title>
+    <script>
+        function add() {
+            var numOne, numTwo, sum;
+            numOne = parseInt(document.getElementById("numOne").value);
+            numTwo = parseInt(document.getElementById("numTwo").value);
+            sum = numOne + numTwo;
+            document.getElementById("sum").value = sum;
+        }
+        function reset() {
+            document.getElementById("sumForm").reset();
+            document.getElementById("sum").value = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>PENJUMLAHAN BILANGAN</h1>
+    <form id="sumForm">
+
+    <table>
+        <tr>
+            <td>
+                <label for="numOne">Bilangan Pertama:</label>
+            </td>
+            <td>
+                <input type="number" id="numOne" required><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="numTwo">Bilangan Kedua:</label>
+            </td>
+            <td>
+                <input type="number" id="numTwo" required><br><br>
+            </td>
+        </tr>
+    </table>
+    <button type="button" onclick="add()">Jumlahkan</button>
+    <button type="button" onclick="reset()">Ulang</button><br><br>
+    
+    <label for="sum">Hasil:</label>
+    <input type="text" id="sum" readonly>
+</form>
+</body>
+</html>

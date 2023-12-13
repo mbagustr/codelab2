@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div  class="container">
+       <form autocomplete="off" onsubmit="return validation()">
+            <div class="input-section">
+                <label>Nama Lengkap: </label>
+                <input type="text" id="name">
+                <span id="empty-name" class="hide required-color error-message">Tidak boleh dikosongkan</span>
+            </div>
+            <div class="input-section">
+                <label>Email: </label>
+                <input type="email" id="email">
+                <span id="email-error" class="hide required-color error-message">Inputan Salah</span>
+                <span id="empty-email" class="hide required-color error-message">Tidak boleh dikosongkan</span>
+            </div>
+            <div class="input-section">
+                <label>Alamat: </label>
+                <textarea id="address" name="address" cols="69.5" rows="10"></textarea>
+                <span id="empty-address" class="hide required-color error-message">Tidak boleh dikosongkan</span>
+            </div>
+            <button id="submit">Daftar</button>
+       </form>
+    </div>
+</body>
+
+<script>
+    function validation(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var address = document.getElementById("address").value;
+        var errorMessage = "inputkan dengan benar";
+        
+        if (name.trim() === "") {
+            document.getElementById("empty-name").classList.remove("hide");
+            // return false;
+            errorMessage += "\n";
+        } else {
+            document.getElementById("empty-name").classList.add("hide");
+            }   
+
+        if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+            document.getElementById("email-error").classList.remove("hide");
+            document.getElementById("empty-email").classList.add("hide");
+            // return false;
+            errorMessage += "\n";
+        } else {
+            document.getElementById("email-error").classList.add("hide");
+            }
+
+        if (address.trim() === "") {
+            document.getElementById("empty-address").classList.remove("hide");
+            errorMessage += "\n";
+            // return false;
+            } else {
+            document.getElementById("empty-address").classList.add("hide");
+            }
+
+    
+        }
+
+    
+</script>
+</html>
